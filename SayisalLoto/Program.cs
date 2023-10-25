@@ -39,6 +39,7 @@ for (int i = 0; i < columnCount; i++)
 }
 
 SayiSirala(columnCount, sayilar);
+Console.WriteLine("Girilen kuponlar: ");
 
 for (int i = 0;i < columnCount;i++)
 {
@@ -48,6 +49,7 @@ for (int i = 0;i < columnCount;i++)
     }
     Console.WriteLine();
 }
+Console.WriteLine();
 
 int[] RandomNumbers = new int[6];
 Random rastgele = new Random();
@@ -68,13 +70,16 @@ for (int i = 0; i < 6; i++)
     }
 }
 
-Console.WriteLine();
+Console.Write("Sayısal Loto Sonucu: ");
 Array.Sort(RandomNumbers);
+Console.WriteLine();
 
 for (int i = 0; i < 6 ;i++)
 {
     Console.Write(RandomNumbers[i] + " ");
 }
+Console.WriteLine();
+
 static void SayiSirala(int kolonSayisi, int[,] sayilar)
 {
     int[] tek_boyutlu_dizi = new int[6];
@@ -84,7 +89,6 @@ static void SayiSirala(int kolonSayisi, int[,] sayilar)
         {
             tek_boyutlu_dizi[j] = sayilar[i, j];
         }
-
 
         Array.Sort(tek_boyutlu_dizi);
 
