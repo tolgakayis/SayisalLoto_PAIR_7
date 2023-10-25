@@ -23,11 +23,16 @@ for (int i = 0; i < columnCount; i++)
         sayilar[i, j] = int.Parse(Console.ReadLine());
         for (int k = 0; k < j; k++)
         {
+            bool flag = true;
             while (sayilar[i, k] == sayilar[i, j] || sayilar[i, j] < 1 || sayilar[i, j] > 49)
             {
                 Console.WriteLine("Farklı bir sayı giriniz: ");
                 sayilar[i, j] = int.Parse(Console.ReadLine());
+                flag = false;
             }
+
+            if (!flag)
+                k = -1; //While döngüsünden çıkınca sıfırıncı index atlanmaması için ve k + 1 alacağı için -1'den başlatılmalı.
         }
     }
     Console.Clear();
@@ -52,11 +57,14 @@ for (int i = 0; i < 6; i++)
     RandomNumbers[i] = rastgele.Next(1, 50);
     for (int j = 0; j < i; j++)
     {
+        bool flag = true;
         while (RandomNumbers[i] == RandomNumbers[j])
         {
             RandomNumbers[i] = rastgele.Next(1, 50);
-            j = 0;
+            flag = false;
         }
+        if (!flag)
+            j = -1; //While döngüsünden çıkınca sıfırıncı index atlanmaması için ve j + 1 alacağı için -1'den başlatılmalı.
     }
 }
 
